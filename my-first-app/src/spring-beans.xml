@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- This bean is created and maintained by spring container  -->
+	<bean id = "ds" class = "com.tcs.DataSource">
+		<property name="username" value="Rutz"></property>
+		<property name="password" value="#0101"></property>
+		<property name="url" value="https:OOOO.com"></property>
+	</bean>
+	<bean id="dao" class="com.tcs.CustomerDao" >
+		<property name="datasource" ref="ds"></property> 
+	</bean>
+		
+	<bean id="service" class="com.tcs.CustomerService">
+		<constructor-arg index="0" ref="dao"></constructor-arg>
+	</bean>	
+</beans>
