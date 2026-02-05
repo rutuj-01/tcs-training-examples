@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee findEmployeeById(int id) throws EmployeeNotFoundException {
 		Employee emp = employeeDao.fetchEmployee(id);
-		if(emp == null) {
+		if(emp.getId()!=0 && emp == null) {
 			throw new EmployeeNotFoundException("Sorry "+id+" not found!");
 		}
 		// returns only if employee found
