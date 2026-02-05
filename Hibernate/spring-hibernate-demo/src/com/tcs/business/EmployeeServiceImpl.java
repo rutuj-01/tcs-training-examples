@@ -20,6 +20,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	@Transactional
 	public Employee store(Employee employee) {
+		if(employee.getName()!=null) {
+			System.out.println("added NPE");
+		}
 		int result = employeeDao.save(employee);
 		Employee emp = employeeDao.fetchEmployee(result);
 		return emp;
