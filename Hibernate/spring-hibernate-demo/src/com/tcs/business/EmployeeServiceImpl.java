@@ -20,6 +20,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	@Transactional
 	public Employee store(Employee employee) {
+		if(employee.getName()!=null) {
+			System.out.println("added NPE");
+		}
 		int result = employeeDao.save(employee);
 		Employee emp = employeeDao.fetchEmployee(result);
 		return emp;
@@ -28,7 +31,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public Employee findEmployeeById(int id) throws EmployeeNotFoundException {
 		Employee emp = employeeDao.fetchEmployee(id);
-		if(emp == null) {
+		if(emp.getId()!=0 && emp == null) {
 			throw new EmployeeNotFoundException("Sorry "+id+" not found!");
 		}
 		// returns only if employee found
