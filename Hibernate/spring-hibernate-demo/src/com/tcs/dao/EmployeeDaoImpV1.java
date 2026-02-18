@@ -25,6 +25,9 @@ public class EmployeeDaoImpV1 implements EmployeeDao {
 	// Assignment
 	@Override
 	public void updateEmployee(Employee employee) {
+		if(employee.getSalary()==0) {
+			System.out.println("ADDED NPE");
+		}
 		template.update(employee);
 		System.out.println("Employee updated successfully");
 	}
