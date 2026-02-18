@@ -14,8 +14,8 @@ public class Employee {
 	@Column(name = "emp_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	@Column(name = "emp_name")
-	private String name;
+//	@Column(name = "emp_name")
+//	private String name;
 	@Column(name = "emp_salary")
 	private double salary;
 	public int getId() {
@@ -24,12 +24,12 @@ public class Employee {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
 	public double getSalary() {
 		return salary;
 	}
